@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Page!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+<h1>Sign Up</h1>
+<form 
+@submit
+.prevent="submitForm">
+<div class="field">
+<label for="username">Username:</label>
+<input type="text" id="username" v-model="username" required>
+</div>
+<div class="field">
+<label for="password">Password:</label>
+<input type="password" id="password" v-model="password" required minlength="8">
+</div>
+<p v-if="errors.length > 0" class="error-message">
+{{ errors.join(', ') }}
+</p>
+<p v-if="successMessage" class="success-message">
+{{ successMessage }}
+</p>
+<button type="submit">Sign Up</button>
+</form>
+<p class="signup-link">Already have an account? <a href="login.html">Log In</a></p>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
